@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+.posts-grid-layout{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    @media  screen and (max-width:1024px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .brand-post{
+        width: 90%;
+        height: 300px;
+        display: flex;
+        background-color: #7e796e21;
+        backdrop-filter: blur(7px);
+        box-shadow: 0px 1px 15px #0000004a;
+        margin: 10px 5px;
+        border-radius: 10px;
+        .image-profile{
+        position: relative;
+        width: 55%;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #00000028;
+            z-index: 1;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .image-description{
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            margin: 0 auto;
+            padding: 5px 10px;
+            text-overflow: Ellipsis;
+            width: 94%; 
+            white-space: nowrap;
+            overflow:hidden; 
+            p{
+                text-transform: capitalize;
+                text-align: center;
+                font-size: 12px;
+            }
+            
+        }
+    }
+    .info-profile{
+        width: 45%;
+        padding: 10px 15px;
+        position: relative;
+        a{
+            text-decoration: none;
+        }
+        .brand-user{
+                display: flex;
+                justify-content: initial;
+                align-items: center;
+                .image-profile-user{
+                    width: 45px;
+                    height: 45px;
+                    margin-right: 10px;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        background-color: transparent;
+                    }
+                }
+                .info-profile{
+                    p{
+                        color: white;
+                    }
+                }
+        }
+        .publishDate{
+            font-size: 13px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .tags{
+            padding: 15px 0;
+            .tags-list{
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .tag{
+                    padding: 5px;
+                    margin: 4px;
+                    background-color: #c7430f;
+                    border-radius: 7px;
+                    font-size: 14px;
+                    font-family: 'Raleway', sans-serif;
+                    color: rgb(255, 255, 255);
+                    font-weight: 500;
+                    box-shadow: 0px 1px 15px #0000004a;
+                    cursor: pointer;
+                    animation: ease-out;
+                    transition: .5s;
+                    .tag-link{
+                        color: white;
+                        text-decoration: none;
+                    }
+                    &:hover{
+                        background-color: white;
+                        transition: .5s;
+                        .tag-link{
+                            color: #c7430f;
+                        }
+                    }
+                }
+            }
+        }
+        .likes-commets{
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            align-items: center;
+            @media  screen and (max-width:768px) {
+                width: 60%;
+            }
+            .likes{
+                position: relative;
+                padding-left: 20px;
+                font-family: 'Raleway', sans-serif;
+                width: 50%;
+                &::before{
+                    position: absolute;
+                    content: "\f164";
+                    font-family: FontAwesome;
+                    width: 20px;
+                    height: 20px;
+                    left: 0;
+                    color: rgb(21, 134, 21);
+                }
+            }
+            .commets{
+                width: 50%;
+                .btn-comments{
+                    border-radius: 15px;
+                    background-color: rgba(0, 0, 0, 0.705);
+                    border: none;
+                    padding: 10px;
+                    color: white;
+                    font-family: 'M PLUS Rounded 1c', sans-serif;
+                    font-size: 12px;
+                    animation: ease-in;
+                    transition: .5s;
+                    cursor: pointer;
+                    box-shadow: 0px 0px 5px #bbbbbb4a;
+
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.705);
+                        color: black;
+                        transition: .5s;
+                        box-shadow: 0px 1px 15px #0000004a;
+
+                    }
+                }
+            }
+        }
+    }
+    }
+}

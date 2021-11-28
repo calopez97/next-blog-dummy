@@ -2,15 +2,19 @@
   "name": "dummy-test",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next start",
     "build": "next build",
-    "start": "next start",
+    "start": "next dev",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "google-auth-library": "^7.10.2",
     "next": "12.0.4",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-google-login": "^5.2.2",
+    "sass": "^1.43.5"
   },
   "devDependencies": {
     "eslint": "7.32.0",

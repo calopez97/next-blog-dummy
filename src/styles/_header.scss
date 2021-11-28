@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;700;800&family=Raleway:wght@200&display=swap');
+
+.layout{
+    .header-dummy{
+        background-color: #7e796e21;
+        backdrop-filter: blur(7px);
+        box-shadow: 0px 1px 15px #0000004a;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        .navigation{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            .brand-user{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .image-profile{
+                    width: 45px;
+                    height: 45px;
+                    margin-right: 10px;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .info-profile{
+                    font-family: 'M PLUS Rounded 1c', sans-serif;
+                    font-size: 12px;
+                }
+            }
+            .btn-google-logout{
+                padding: 10px 15px 10px 35px ;
+                position: relative;
+                border-radius: 15px;
+                background-color: rgba(0, 0, 0, 0.705);
+                border: none;
+                color: white;
+                font-family: 'M PLUS Rounded 1c', sans-serif;
+                font-size: 12px;
+                animation: ease-in;
+                transition: .5s;
+                cursor: pointer;
+                box-shadow: 0px 0px 5px #bbbbbb4a;
+
+                
+                &::before{
+                    position: absolute;
+                    content:"\f011";
+                    color: #c7430f;
+                    background-color: transparent;
+                    font-size: 1.2rem;
+                    font-family: FontAwesome;
+                    left: 10%;
+                    transform: translateY(-50%);
+                    top: 50%;
+                }
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.705);
+                    color: black;
+                    transition: .5s;
+                    box-shadow: 0px 1px 15px #0000004a;
+                    &::before{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
