@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: false,
   env:{
-      DOMAIN:'http://localhost:3000',
+      DOMAIN:'https://next-blog-dummy-dsqwtayc8-calopez97.vercel.app',
       API_GOOGLE:'/api/auth/google-login',
       API_POSTS:'/api/dummy/posts',
       API_USER:'/api/dummy/user',
