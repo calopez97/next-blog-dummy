@@ -14,15 +14,14 @@ const Home = ({postData}) => {
         setLoginData(logdata);
     }, []);
 
-
+    
     return (
         <>
           {
               !loading ? ( 
                   <>
                     <Layout userData={loginData} error={errorPosts} posts={posts}  />
-                    
-                    </>
+                 </>
               ) : (
                 <p>Somethings wrong</p>
               )

@@ -7,11 +7,13 @@ const Layout = ( {userData, error, posts, keyword = '' } ) => {
     const data = userData.length > 0 ? JSON.parse(userData) : [];
     const Posts = posts ?  posts : [];
 
+  
+
     return (
         <>{
             !error ? (
                 <div className="layout">
-                    <Header profile={data.data}/>
+                    <Header profile={data}/>
                     <div className="container">
                         <h1 className="title-posts">{`POSTS ${keyword}`}</h1>
                         <div className="posts-grid-layout">

@@ -6,8 +6,9 @@ const Header = ({profile}) => {
     const data = profile ? profile : [];
     const GoogleId = process.env.GOOGLE_CLIENT_ID;
 
-    const handleLogout = () =>{
-        localStorage.removeItem('loginData');
+   
+    const logOut = (e) =>{ 
+        e.view.localStorage.removeItem('loginData');
         window.open('/', '_self');
     }
     return (
@@ -18,7 +19,7 @@ const Header = ({profile}) => {
                         <div className="image-profile">
                             <img title={data.name} 
                                 alt={data.name}
-                                src={data.picture} />
+                                src={data.picture ? data.picture.data.url : "" } />
                         </div>
                         <div className="info-profile">
                             <p>{data.name}</p>
@@ -26,14 +27,7 @@ const Header = ({profile}) => {
                         </div>
                     </div>
                     <div className="logout">
-                         <GoogleLogout
-                            clientId={GoogleId}
-                            buttonText="Logout"
-                            onLogoutSuccess={(handleLogout)}
-                            render={renderProps => (
-                            <button className="btn-google-logout" onClick={renderProps.onClick} disabled={renderProps.disabled}>Log out</button>
-                            )}
-                        />    
+                            <button className="btn-google-logout" onClick={logOut} >Log out</button>
                     </div>
                 </div>
             </div>
