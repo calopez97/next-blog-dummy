@@ -30,19 +30,24 @@ const Index = () => {
 
   const responseFacebook = (response) =>{
     console.log(response);
-    setLoginData(JSON.stringify(response));
-    localStorage.setItem('loginData', JSON.stringify(response));
-    if(response.accessToken){ 
+  }
+
+  useEffect(() =>{
+
+  },[login, loginData])
+  
+  
+
+  const componentClicked = (data) =>{ 
+    setLoginData(JSON.stringify(data));
+    localStorage.setItem('loginData', JSON.stringify(data));
+    if(data.accessToken){ 
       setLogin(true)
     }else setLogin(false);
   }
 
   if(login) window.open('/home', '_self')
-  else null;
-
-  const componentClicked = (data) =>{ 
-    console.log(data);
-  }
+  
 
   return (
     <>
@@ -64,10 +69,11 @@ const Index = () => {
                   />  */}
                   <FacebookLogin
                     appId="739774490748049"
-                    autoLoad={true}
+                    autoLoad={false}
                     fields="name,email,picture"
-                    onClick={componentClicked}
-                    callback={responseFacebook} />
+                    scope="public_profile, email, user_birthday"
+                    onClick={responseFacebook}
+                    callback={componentClicked} />
                   
             </div>  
          </div> 

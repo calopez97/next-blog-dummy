@@ -22,8 +22,10 @@ class DummyTest extends App {
               rel="stylesheet"
               media="screen"
             />
+            
         </Head>
         <Component {...pageProps}  />
+        
       </>
     );
   }

@@ -8,8 +8,9 @@ const Header = ({profile}) => {
 
    
     const logOut = (e) =>{ 
+        e.preventDefault();
         e.view.localStorage.removeItem('loginData');
-        window.open('/', '_self');
+        e.view.window.open('/', '_self');
     }
     return (
         <div className="header-dummy">

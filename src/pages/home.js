@@ -12,7 +12,7 @@ const Home = ({postData}) => {
         document.querySelector('body').classList.add('home-page');
         const logdata = localStorage.getItem('loginData') ? localStorage.getItem('loginData') : setLoading(true);
         setLoginData(logdata);
-    }, []);
+    }, [loginData, loading]);
 
     
     return (
